@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light jumbotron py-3">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1"> <i class="fas fa-book"></i> Book Shop</span>
+        <span class="navbar-brand mb-0 h1">
+            {% if request.user.is_authenticated %}
+                <a class="btn btn-outline-danger font-weight-bold" href="{% url 'auth_logout' %}">Log out</a>
+            {% else %}
+                <a class="btn btn-outline-success font-weight-bold" href="{% url 'auth_login' %}">Log in</a>
+                <a class="btn btn-outline-primary font-weight-bold" href="{% url 'registration_register' %}">Sign up</a>
+            {% endif %}
+
+        </span>
+    </div>
+</nav>
